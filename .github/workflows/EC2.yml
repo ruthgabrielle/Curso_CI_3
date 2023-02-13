@@ -1,0 +1,15 @@
+name: Continuous Delivery 
+
+on:
+  workflow_call:
+
+jobs:
+
+  EC2:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: Go API
+      - uses: actions/checkout@v3
